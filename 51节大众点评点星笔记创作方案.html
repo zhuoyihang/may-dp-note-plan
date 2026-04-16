@@ -467,6 +467,70 @@
   .activity-step .step-num { font-size:28px; font-weight:900; color:var(--gold); opacity:0.4; }
   .activity-step .step-text { font-size:13px; margin-top:4px; line-height:1.6; }
 
+  /* ===== CASE STUDY GALLERY ===== */
+  .case-gallery-title {
+    font-size: 18px;
+    font-weight: 800;
+    margin: 32px 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .case-gallery-title .cg-badge {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .case-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .case-img-card {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--card);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+  }
+  .case-img-card:hover { transform: translateY(-3px); }
+  .case-img-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+  .case-img-card .caption {
+    padding: 12px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    border-top: 1px solid var(--border);
+  }
+
+  /* Lightbox */
+  .lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+  }
+  .lightbox-overlay.active { display: flex; }
+  .lightbox-overlay img {
+    max-width: 92vw;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+  }
+
   /* ===== RESP ===== */
   @media (max-width: 600px) {
     .hero h1 { font-size: 22px; }
@@ -866,6 +930,35 @@
         </tbody>
       </table>
     </div>
+
+    <!-- 门店案例截图 -->
+    <div class="case-gallery-title">
+      📸 门店素材案例参考
+      <span class="cg-badge" style="background:#FDE8E5;color:#C0392B;">繁花布景实拍</span>
+    </div>
+    <div class="case-gallery">
+      <div class="case-img-card">
+        <img src="images/bali-1.jpg" alt="芭莉与彩虹案例1" onclick="openLightbox(this)">
+        <div class="caption">繁花布景 · 全景氛围</div>
+      </div>
+      <div class="case-img-card">
+        <img src="images/bali-2.jpg" alt="芭莉与彩虹案例2" onclick="openLightbox(this)">
+        <div class="caption">繁花布景 · 花艺装置</div>
+      </div>
+      <div class="case-img-card">
+        <img src="images/bali-3.jpg" alt="芭莉与彩虹案例3" onclick="openLightbox(this)">
+        <div class="caption">门店环境 · 座位区域</div>
+      </div>
+      <div class="case-img-card">
+        <img src="images/bali-4.jpg" alt="芭莉与彩虹案例4" onclick="openLightbox(this)">
+        <div class="caption">菜品呈现</div>
+      </div>
+      <div class="case-img-card">
+        <img src="images/bali-5.jpg" alt="芭莉与彩虹案例5" onclick="openLightbox(this)">
+        <div class="caption">门店门头 / 外观</div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -1040,6 +1133,35 @@
         「五一去了天廊，和牛配新品，写个评价还能抽奖？成都人都不知道这个」
       </div>
     </div>
+
+    <!-- 门店案例截图 -->
+    <div class="case-gallery-title">
+      📸 门店素材案例参考
+      <span class="cg-badge" style="background:#E3F5F1;color:#2E7D6A;">放题自助实拍</span>
+    </div>
+    <div class="case-gallery">
+      <div class="case-img-card">
+        <img src="images/tianlang-1.jpg" alt="天廊案例1" onclick="openLightbox(this)">
+        <div class="caption">门店环境 / 烤肉场景</div>
+      </div>
+      <div class="case-img-card">
+        <img src="images/tianlang-2.jpg" alt="天廊案例2" onclick="openLightbox(this)">
+        <div class="caption">和牛烤肉特写</div>
+      </div>
+      <div class="case-img-card">
+        <img src="images/tianlang-3.jpg" alt="天廊案例3" onclick="openLightbox(this)">
+        <div class="caption">菜品铺盘 / 放题场景</div>
+      </div>
+      <div class="case-img-card">
+        <img src="images/tianlang-4.jpg" alt="天廊案例4" onclick="openLightbox(this)">
+        <div class="caption">海鲜 / 新品呈现</div>
+      </div>
+      <div class="case-img-card">
+        <img src="images/tianlang-5.jpg" alt="天廊案例5" onclick="openLightbox(this)">
+        <div class="caption">多人聚餐氛围</div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -1210,6 +1332,31 @@
         万象城L1 | 170无限量和牛！还有海胆蒸蛋+应季樱桃（五一聚餐攻略）
       </div>
     </div>
+
+    <!-- 门店案例截图 -->
+    <div class="case-gallery-title">
+      📸 门店素材案例参考
+      <span class="cg-badge" style="background:#D6EAF8;color:#1A5276;">重庆万象城实拍</span>
+    </div>
+    <div class="case-gallery">
+      <div class="case-img-card">
+        <img src="images/wanxiangcheng-1.jpg" alt="万象城案例1" onclick="openLightbox(this)">
+        <div class="caption">门店环境 / 烤肉场景</div>
+      </div>
+      <div class="case-img-card">
+        <img src="images/wanxiangcheng-2.jpg" alt="万象城案例2" onclick="openLightbox(this)">
+        <div class="caption">和牛 / 菜品呈现</div>
+      </div>
+      <div class="case-img-card">
+        <img src="images/wanxiangcheng-3.jpg" alt="万象城案例3" onclick="openLightbox(this)">
+        <div class="caption">海胆蒸蛋 / 新品特写</div>
+      </div>
+      <div class="case-img-card">
+        <img src="images/wanxiangcheng-4.jpg" alt="万象城案例4" onclick="openLightbox(this)">
+        <div class="caption">应季水果 / 时令展示</div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -1425,6 +1572,31 @@
         </tbody>
       </table>
     </div>
+
+    <!-- 门店案例截图 -->
+    <div class="case-gallery-title">
+      📸 门店素材案例参考
+      <span class="cg-badge" style="background:#FDF5DC;color:#8B6914;">华商高端实拍</span>
+    </div>
+    <div class="case-gallery">
+      <div class="case-img-card">
+        <img src="images/huashang-1.jpg" alt="华商店案例1" onclick="openLightbox(this)">
+        <div class="caption">盛唐风包间 / 环境氛围</div>
+      </div>
+      <div class="case-img-card">
+        <img src="images/huashang-2.jpg" alt="华商店案例2" onclick="openLightbox(this)">
+        <div class="caption">M级和牛 / 现切呈现</div>
+      </div>
+      <div class="case-img-card">
+        <img src="images/huashang-3.jpg" alt="华商店案例3" onclick="openLightbox(this)">
+        <div class="caption">菜品摆盘 / 烤肉特写</div>
+      </div>
+      <div class="case-img-card">
+        <img src="images/huashang-4.jpg" alt="华商店案例4" onclick="openLightbox(this)">
+        <div class="caption">管家式服务 / 用餐场景</div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -1432,17 +1604,28 @@
 <!-- SCRIPTS -->
 <script>
 function switchTab(tabId, el) {
-  // hide all panels
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  // deactivate all tabs
   document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-  // show target
   document.getElementById('tab-' + tabId).classList.add('active');
   el.classList.add('active');
-  // scroll to top
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+// Lightbox
+function openLightbox(img) {
+  var overlay = document.getElementById('lightbox');
+  overlay.querySelector('img').src = img.src;
+  overlay.classList.add('active');
+}
+document.getElementById('lightbox').addEventListener('click', function() {
+  this.classList.remove('active');
+});
 </script>
+
+<!-- Lightbox Overlay -->
+<div class="lightbox-overlay" id="lightbox">
+  <img src="" alt="预览大图">
+</div>
 
 </body>
 </html>
